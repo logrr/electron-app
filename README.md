@@ -4,6 +4,8 @@ electron-app is sample Electron application using Logrr for authentication.
 
 This app requires to get settings from your app config from our [portal]
 
+If you don't have access to it, request your trial [here](http://info.logrr.com/logrr-trial-sign-up).
+
 ## Install
 
 First, clone this repository or download a zip file out of it, your choice.
