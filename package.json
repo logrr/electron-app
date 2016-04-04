@@ -1,0 +1,17 @@
+{
+  "name": "logrrelectron",
+  "version": "1.0.0",
+  "description": "Logrr Demo login with Electron app container",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron-prebuilt": "^0.37.4"
+  },
+  "dependencies": {
+    "logrr-electron-auth": "0.1.x"
+  }
+}

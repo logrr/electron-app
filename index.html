@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electron - Container App Example</title>
+</head>
+<body>
+    You are using io.js
+    <script>document.write(process.version)</script>
+    and Electron
+    <script>document.write(process.versions['electron'])</script>.
+    <p id="loginStatus">You are not connected.</p>
+    <p><input type="button" id="loginButton" value="Login with logrr" onclick="login()" /></p>
+    
+    <script type="text/javascript">
+        var ipc = require('ipc');
+        function login() {
+            ipc.send('logrr-login', '');
+        }
+        ipc.on('authentication-ok', function(nameID) {
+            var loginStatus = document.getElementById('loginStatus');
+            loginStatus.innerHTML = 'You are authenticated with Logrr, with username "' + nameID + '"';
+            var loginButon = document.getElementById('loginButton');
+            loginButon.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
