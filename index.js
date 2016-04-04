@@ -1,6 +1,6 @@
 var app = require('app'),
   BrowserWindow = require('browser-window'),
-  ipc = require('ipc'),
+  ipc = require('electron').ipcMain,
   saml = require('logrr-electron-auth').saml,
   samlElecton = require('logrr-electron-auth').samlElectron;
 app.commandLine.appendSwitch('disable-http-cache');
@@ -43,7 +43,7 @@ app.on('ready', function() {
   // On Mac, data is stored into Users/NAME/Library/Caches/APPNAME
   mainWindow.setMenu(null);
   mainWindow.webContents.session.clearStorageData(function() {
-    mainWindow.loadUrl('file://' + __dirname + '/index.html');
+    mainWindow.loadURL('file://' + __dirname + '/index.html');
   });
   mainWindow.on('closed', function() {
     mainWindow = null;
