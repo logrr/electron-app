@@ -24,6 +24,10 @@ Go to your Electron configured app, and grab the following value info from the s
 - Sign In Url field value (e.g. *"https://connect.logrr.com/login/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"*)
 - Public certificate (a veeeeeeeeeeery long base64 encoded version of your public key. e.g. *"MIIDOjCCAiKgAwIBAgIQAI3...."*)
 
+Have a look at the iamge below to find corresponding values on the Logrr Portal
+
+![Logrr settings](https://logrrcontent.blob.core.windows.net/images/appSetupProperties.png)
+
 Place these values by editing the **index.js** file replacing values as follows:
 
 Before:
