@@ -2,26 +2,39 @@
 <html>
 <head>
     <title>Electron - Container App Example</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-    You are using nodejs
-    <script>document.write(process.version)</script>
-    and Electron
-    <script>document.write(process.versions['electron'])</script>.
-    <p id="loginStatus">You are not connected.</p>
-    <p><input type="button" id="loginButton" value="Login with logrr" onclick="login()" /></p>
+    <div id="loginStatus"></div>
+    <div id="loginForm" class="login-page">
+        <div class="form">
+            <form class="login-form">
+              <input id="username" type="text" placeholder="username"/>
+              <button type="button" onclick="login()">login with Logrr</button>
+            </form>
+        </div>
+    </div>
     
     <script type="text/javascript">
+        var remote = require('remote');
         var ipc = require('ipc');
+        var samlElecton = remote.require('logrr-electron-auth').samlElectron;
+
         function login() {
-            ipc.send('logrr-login', '');
+            var nameID = document.getElementById('username').value;
+            ipc.send('logrr-login', nameID);
         }
+
         ipc.on('authentication-ok', function(nameID) {
             var loginStatus = document.getElementById('loginStatus');
-            loginStatus.innerHTML = 'You are authenticated with Logrr, with username "' + nameID + '"';
-            var loginButon = document.getElementById('loginButton');
-            loginButon.style.display = 'none';
+            loginStatus.innerHTML = 'Logged in as "' + nameID + '"';
+            loginStatus.style.display = 'block';
+            var loginForm = document.getElementById('loginForm');
+            loginForm.style.display = 'none';
         });
+
+        var nameID = samlElecton.getNameID();
+        document.getElementById('username').value = nameID;
     </script>
 </body>
 </html>

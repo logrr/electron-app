@@ -24,8 +24,8 @@ var samlElectonSettings = {
 saml.setParams(samlSettings);
 samlElecton.setParams(samlElectonSettings);
 
-ipc.on('logrr-login', function(event, arg) {
-  samlElecton.openLogrrLoginWindow();
+ipc.on('logrr-login', function(event, login) {
+  samlElecton.openLogrrLoginWindow(login);
 });
 
 // Quit when all windows are closed.
