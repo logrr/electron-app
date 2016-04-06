@@ -35,6 +35,13 @@
 
         var nameID = samlElecton.getNameID();
         document.getElementById('username').value = nameID;
+
+        var usernameField = document.getElementById("username");
+        usernameField.addEventListener("keydown", function (e) {
+            if (e.keyCode === 13) {
+                login();
+            }
+        });
     </script>
 </body>
 </html>
