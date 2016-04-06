@@ -49,9 +49,10 @@ var samlSettings = {
 };
 ```
 
-Just now run the app:
-- on Windows, by calling the **LaunchApp.cmd** file
-- on Mac, by opening the Electron default app and dragging the app folder onto it
-
+Just now run the app by running the following command in the app folder:
+After:
+```
+npm start
+```
 [Logrr]: http://www.logrr.com
 [Portal]: https://portal.logrr.com/

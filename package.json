@@ -4,6 +4,7 @@
   "description": "Logrr Demo login with Electron app container",
   "main": "index.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
